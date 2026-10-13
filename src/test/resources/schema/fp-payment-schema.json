@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Bill payment (GRAD-302)",
+  "type": "object",
+  "required": [
+    "id",
+    "receiptNo",
+    "status",
+    "biller",
+    "subscriberNo",
+    "amount",
+    "fee",
+    "total",
+    "currency",
+    "cardId",
+    "balanceAfter",
+    "createdAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "receiptNo": {
+      "type": "string",
+      "pattern": "^RCP-[0-9]{8}-[0-9]{6}$"
+    },
+    "status": {
+      "type": "string"
+    },
+    "biller": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "category"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        }
+      }
+    },
+    "subscriberNo": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "fee": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "cardId": {
+      "type": "string"
+    },
+    "balanceAfter": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}

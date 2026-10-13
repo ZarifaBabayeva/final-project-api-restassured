@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Billers (GRAD-301)",
+  "type": "object",
+  "required": [
+    "total",
+    "items"
+  ],
+  "properties": {
+    "total": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "category",
+          "subscriberFormat",
+          "minAmount",
+          "maxAmount",
+          "fee",
+          "subscriberPattern"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "UTILITY",
+              "MOBILE",
+              "INTERNET"
+            ]
+          },
+          "subscriberFormat": {
+            "type": "string"
+          },
+          "minAmount": {
+            "type": "number"
+          },
+          "maxAmount": {
+            "type": "number"
+          },
+          "fee": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "subscriberPattern": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
